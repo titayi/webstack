@@ -1,15 +1,20 @@
 const express = require('express');
 const cors = require('cors');
+const { dbase } = require('./dbase/base')
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT;
 
 // Middleware
-
+app.use(express.json());
+app.use(cors());
 
 const server = () => {
-    console.log('You are listening to port:', PORT);
+    dbase()
+    app.listen(PORT, () => {
+        console.log('You are listening to port:', PORT);
+    })
 }
 
 server();
