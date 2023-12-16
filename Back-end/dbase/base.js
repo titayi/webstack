@@ -10,4 +10,4 @@ const dbase = async () => {
     }
 }
 
-module.exports = {dbase}
+module.exports = { dbase }
